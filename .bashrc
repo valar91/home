@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm*|*color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -58,7 +58,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1="\n${debian_chroot:+($debian_chroot)}\[\e[0;33m[\e[0;32m\t \e[0;36m\u@\h \e[0;31m\W\e[0;33m]\e[m\]\n\[\e[1;33m\]\$\[\e[m\]"
+    PS1='\n${debian_chroot:+($debian_chroot)}\[\e[0;33m[\e[0;32m\t \e[0;36m\u@\h \e[0;31m\w \e[0;35m`__git_ps1`\e[0;33m]\e[m\]\n\[\e[1;33m\]\$\[\e[m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
