@@ -30,6 +30,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'https://github.com/spin6lock/vim_sproto.git'
+Plugin 'peter-edge/vim-capnp'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
