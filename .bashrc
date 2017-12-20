@@ -8,6 +8,16 @@ case $- in
       *) return;;
 esac
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+if [ -f ./git-prompt.sh ]; then
+	. ./git-prompt.sh
+fi
+
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -115,12 +125,6 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
 fi
 
 # User specific aliases and functions
