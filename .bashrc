@@ -13,8 +13,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f ./git-prompt.sh ]; then
-	. ./git-prompt.sh
+git_prompt_sh=/usr/share/doc/git-1.8.3.1/contrib/completion/git-prompt.sh
+if [ -f $git_prompt_sh ]; then
+	. $git_prompt_sh
 fi
 
 
