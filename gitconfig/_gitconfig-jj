@@ -1,0 +1,15 @@
+[credential]
+	helper = store
+[pull]
+	rebase = true
+[push]
+	default = simple
+[color]
+	ui = auto
+[http]
+	sslverify = false
+[user]
+	email = licy02@mail.jj.cn
+	name = Li
+[merge]
+	tool = vimdiff
