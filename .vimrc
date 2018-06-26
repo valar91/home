@@ -163,3 +163,4 @@ endif
 
 set fileencodings=ucs-bom,utf-8,gbk,latin1
 set nu
+set tags=./tags;,tags
