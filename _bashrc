@@ -140,11 +140,15 @@ PRE=$1
 SUB=$2
 VAR=$3
 OLD=${!VAR}
-if [ -n "$OLD" ]
+ADD="$PRE"/"$SUB"
+if [ -e "$ADD" ]
 then
-	eval $VAR=$PRE/$SUB:$OLD
-else
-	eval $VAR=$PRE/$SUB
+	if [ -n "$OLD" ]
+	then
+		${!VAR}="$ADD":"$OLD"
+	else
+		${!VAR}="$ADD"
+	fi
 fi
 }
 
@@ -172,10 +176,14 @@ prepand $LCY_BUILD
 prepand $LCY_USR
 prepand $LCY_LOCAL
 
-for each in $LCY_EACH/*
-do
-    prepand $each
-done
+if [ -e "$LCY_EACH" ]
+then
+	#for each in $LCY_EACH/*
+	for each in `cd $LCY_EACH && ls *`
+	do
+	    prepand $each
+	done
+fi
 
 export PATH
 export LD_LIBRARY_PATH
