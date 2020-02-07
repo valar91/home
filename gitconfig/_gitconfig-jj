@@ -9,7 +9,13 @@
 [http]
 	sslverify = false
 [user]
-	email = licy02@mail.jj.cn
-	name = Li
+	email = lichengyu1985@163.com
+	name = Li Chengyu
 [merge]
 	tool = vimdiff
+[mergetool]
+	keepBackup = false
+[alias]
+	lg = log --all --color --graph --date=format:%y%m%d.%H%M%S --pretty=format:'%Cred%h%Creset %Cblue%ad%Creset%C(yellow)%d%Creset %s %Cblue(%an)%Creset %C(dim green)<%cn %cd>%Creset' --abbrev-commit
+	last = log -p -1
+

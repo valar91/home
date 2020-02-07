@@ -30,6 +30,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'https://github.com/spin6lock/vim_sproto.git'
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plugin 'peter-edge/vim-capnp'
 
 " The following are examples of different formats supported.
@@ -151,7 +152,7 @@ endif
 
 
 "This will automatically change the backupdir setting to be $HOME/.vim/backup/path/to/filedirectory before vim saves the file.
-set backupdir=$HOME/.vimbak
+set backupdir=$HOME/.vimbak/
 
 let s:backupdir = &backupdir
 exec 'set backupdir=' . s:backupdir . expand('%:p:h')
@@ -160,7 +161,8 @@ if !isdirectory(&backupdir)
 call mkdir(&backupdir, "p")
 endif
 
-
+set noexpandtab
+set number
 set fileencodings=ucs-bom,utf-8,gbk,latin1
-set nu
+set formatoptions-=t
 set tags=./tags;,tags
